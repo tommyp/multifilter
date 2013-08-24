@@ -1,7 +1,7 @@
 multifilter
 ===========
 
-A jQuery plugin to filter a table based on multiple inputs
+A jQuery plugin to filter a table based on multiple inputs. Check out the [demo](http://tommyp.github.io/multifilter/).
 
 ## Usage
 
