@@ -1,7 +1,7 @@
 (function($) {
   $.fn.multifilter = function(options) {
     var settings = $.extend( {
-      'target'        : null,
+      'target'        : $('table')
     }, options);
 
     jQuery.expr[":"].Contains = function(a, i, m) {
@@ -10,7 +10,7 @@
 
     this.each(function() {
       var $this = $(this);
-      container = $($this.attr('data-target'));
+      container = settings.target
       row_tag = 'tr';
       item_tag = 'td'
       rows = container.find($('tbody ' + row_tag))
@@ -55,4 +55,4 @@
       });
     });
   };
-})(jQuery);
+})(jQuery);(jQuery);
