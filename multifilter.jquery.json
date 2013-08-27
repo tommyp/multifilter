@@ -1,0 +1,36 @@
+{
+    "name": "multifilter",
+    "title": "jQuery Multifilter",
+    "description": "Filter a HTML table based on multiple inputs",
+    "keywords": [
+        "table",
+        "filter",
+        "input"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Tommy Palmer",
+        "email": "hi@tommyp.org",
+        "url": "http://tommyp.org"
+    },
+    "maintainers": [
+        {
+          "name": "Tommy Palmer",
+          "email": "hi@tommyp.org",
+          "url": "http://tommyp.org"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/tommyp/multifilter/blob/master/LICENSE"
+        }
+    ],
+    "bugs": "https://github.com/tommyp/multifilter/issues",
+    "homepage": "https://github.com/tommyp/multifilter",
+    "docs": "https://github.com/tommyp/multifilter",
+    "download": "http://code.jquery.com/#multifilter",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
