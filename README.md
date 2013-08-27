@@ -13,7 +13,7 @@ $(document).ready(function() {
 })
 ```
 
-If you have multiple tables on the same page, you can pass a jQuery object for the table element
+If you have multiple tables on the same page, you can pass a jQuery object for the table element.
 
 ```javascript
 $(document).ready(function() {
