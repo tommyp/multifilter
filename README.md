@@ -13,12 +13,16 @@ $(document).ready(function() {
 })
 ```
 
-If you have multiple tables on the same page, you can pass a jQuery object for the table element.
+If you have multiple tables on the same page and you want different sets of inputs for the different tables, you can pass a jQuery object for to each instance for each table element.
 
 ```javascript
 $(document).ready(function() {
-  $('.filter').multifilter({
-    'target' : $('#my-table')
+  $('.main-filter').multifilter({
+    'target' : $('#main-table')
+  })
+  
+  $('.alt-filter').multifilter({
+    'target' : $('#alt-table')
   })
 })
 ```
