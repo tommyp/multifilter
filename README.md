@@ -13,7 +13,7 @@ $(document).ready(function() {
 })
 ```
 
-If you have multiple tables on the same page and you want different sets of inputs for the different tables, you can pass a jQuery object for to each instance for each table element.
+If you have multiple tables on the same page and you want different sets of inputs for the different tables, you can pass a jQuery object for each instance for each table element.
 
 ```javascript
 $(document).ready(function() {
