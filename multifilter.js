@@ -1,4 +1,5 @@
 (function($) {
+  "use strict";
   $.fn.multifilter = function(options) {
     var settings = $.extend( {
       'target'        : $('table')
@@ -10,23 +11,20 @@
 
     this.each(function() {
       var $this = $(this);
-      container = settings.target
-      row_tag = 'tr';
-      item_tag = 'td'
-      rows = container.find($('tbody ' + row_tag))
+      var container = settings.target;
+      var row_tag = 'tr';
+      var item_tag = 'td';
+      var rows = container.find($('tbody ' + row_tag));
 
       var col = container.find('th:Contains(' + $this.attr('name') + ')');
       var col_index = container.find($('thead th')).index(col); 
       $this.change(function() {
-        input = $this
-        filter = $this.val();
+        var filter = $this.val();
         rows.each(function() {
-          hidden_rows = []
-          visible_rows = []
-          row = $(this);
-          cell = $(row.children(item_tag)[col_index])
+          var row = $(this);
+          var cell = $(row.children(item_tag)[col_index]);
           if (filter) {
-            if (cell.text().toLowerCase().indexOf(filter.toLowerCase()) != -1) {
+            if (cell.text().toLowerCase().indexOf(filter.toLowerCase()) !== -1) {
               cell.attr('data-filtered', 'positive');
             } else {
               cell.attr('data-filtered', 'negative');
@@ -48,7 +46,7 @@
               }
             }
           }
-        })
+        });
         return false;
       }).keyup(function() {
         $this.change();
