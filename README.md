@@ -5,7 +5,7 @@ A jQuery plugin to filter a table based on multiple inputs. Check out the [demo]
 
 ## Usage
 
-Call the plugin on any input you want to track:
+Call the plugin on any input you want to track and tell it what to look for with a `data-col` attribute:
 
 ```javascript
 $(document).ready(function() {
@@ -27,10 +27,20 @@ $(document).ready(function() {
 })
 ```
 
-As long as the name attribute matches up with something in the `<thead>`, it will filter the content in those columns in `<tbody>`:
+As long as the `data-col` attribute matches up with something in the `<thead>`, it will filter the content in those columns in the table:
 
 ```html
-<input class="filter" name="email" placeholder="email">
+<input class="filter" name="email" placeholder="email" data-col="email">
 ```
 
 That's it!
+
+Alternatively, if you prefer your tables without a `<thead>` you match up the column with a class on your `<td>` tags by doing:
+
+```javascript
+$(document).ready(function() {
+  $('.main-filter').multifilter({
+    'method' : 'class'
+  })
+})
+```

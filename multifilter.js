@@ -2,7 +2,8 @@
   "use strict";
   $.fn.multifilter = function(options) {
     var settings = $.extend( {
-      'target'        : $('table')
+      'target'        : $('table'),
+      'method'    : 'thead' // This can be thead or class
     }, options);
 
     jQuery.expr[":"].Contains = function(a, i, m) {
@@ -14,10 +15,20 @@
       var container = settings.target;
       var row_tag = 'tr';
       var item_tag = 'td';
-      var rows = container.find($('tbody ' + row_tag));
+      var rows = container.find($(row_tag));
 
-      var col = container.find('th:Contains(' + $this.attr('name') + ')');
-      var col_index = container.find($('thead th')).index(col); 
+      if (settings.method === 'thead') {
+        // Match the data-col attribute to the text in the thead
+        var col = container.find('th:Contains(' + $this.data('col') + ')');
+        var col_index = container.find($('thead th')).index(col);   
+      };
+
+      if (settings.method === 'class') {
+        // Match the data-col attribute to the class on each column
+        var col = rows.first().find('td.' + $this.data('col') + '');
+        var col_index = rows.first().find($('td')).index(col);   
+      };
+
       $this.change(function() {
         var filter = $this.val();
         rows.each(function() {
@@ -53,4 +64,4 @@
       });
     });
   };
-})(jQuery);(jQuery);
+})(jQuery);
