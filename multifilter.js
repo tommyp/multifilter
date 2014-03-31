@@ -2,7 +2,7 @@
   "use strict";
   $.fn.multifilter = function(options) {
     var settings = $.extend( {
-      'target'        : $('table'),
+      'target'    : $('table'),
       'method'    : 'thead' // This can be thead or class
     }, options);
 
@@ -20,13 +20,13 @@
       if (settings.method === 'thead') {
         // Match the data-col attribute to the text in the thead
         var col = container.find('th:Contains(' + $this.data('col') + ')');
-        var col_index = container.find($('thead th')).index(col);   
+        var col_index = container.find($('thead th')).index(col);
       };
 
       if (settings.method === 'class') {
         // Match the data-col attribute to the class on each column
         var col = rows.first().find('td.' + $this.data('col') + '');
-        var col_index = rows.first().find($('td')).index(col);   
+        var col_index = rows.first().find('td').index(col);
       };
 
       $this.change(function() {
@@ -41,19 +41,19 @@
               cell.attr('data-filtered', 'negative');
             }
             if (row.find(item_tag + "[data-filtered=negative]").size() > 0) {
-               row.hide();
+               row.css('display', 'none');
             } else {
               if (row.find(item_tag + "[data-filtered=positive]").size() > 0) {
-                row.show();
+                row.css('display', '')
               }
             }
           } else {
             cell.attr('data-filtered', 'positive');
             if (row.find(item_tag + "[data-filtered=negative]").size() > 0) {
-              row.hide();
+              row.css('display', 'none');
             } else {
               if (row.find(item_tag + "[data-filtered=positive]").size() > 0) {
-                row.show();
+                row.css('display', '')
               }
             }
           }
