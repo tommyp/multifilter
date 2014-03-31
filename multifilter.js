@@ -20,13 +20,13 @@
       if (settings.method === 'thead') {
         // Match the data-col attribute to the text in the thead
         var col = container.find('th:Contains(' + $this.data('col') + ')');
-        var col_index = container.find($('thead th')).index(col);   
+        var col_index = container.find($('thead th')).index(col);
       };
 
       if (settings.method === 'class') {
         // Match the data-col attribute to the class on each column
         var col = rows.first().find('td.' + $this.data('col') + '');
-        var col_index = rows.first().find($('td')).index(col);   
+        var col_index = rows.first().find($('td')).index(col);
       };
 
       $this.change(function() {
