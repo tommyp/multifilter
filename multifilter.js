@@ -25,7 +25,7 @@
 
       if (settings.method === 'class') {
         // Match the data-col attribute to the class on each column
-        var col = rows.first().find('td.' + $this.data('col') + '');
+        var col = rows.first().find('td.' + $this.data('col'));
         var col_index = rows.first().find('td').index(col);
       };
 
