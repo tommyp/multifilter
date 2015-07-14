@@ -9,8 +9,8 @@ Call the plugin on any input you want to track and tell it what to look for with
 
 ```javascript
 $(document).ready(function() {
-  $('.filter').multifilter()
-})
+  $('.filter').multifilter();
+});
 ```
 
 If you have multiple tables on the same page and you want different sets of inputs for the different tables, you can pass a jQuery object for each instance for each table element.
@@ -18,13 +18,13 @@ If you have multiple tables on the same page and you want different sets of inpu
 ```javascript
 $(document).ready(function() {
   $('.main-filter').multifilter({
-    'target' : $('#main-table')
-  })
-  
+    'target': $('#main-table')
+  });
+
   $('.alt-filter').multifilter({
-    'target' : $('#alt-table')
-  })
-})
+    'target': $('#alt-table')
+  });
+});
 ```
 
 As long as the `data-col` attribute matches up with something in the `<thead>`, it will filter the content in those columns in the table:
@@ -40,7 +40,7 @@ Alternatively, if you prefer your tables without a `<thead>` you match up the co
 ```javascript
 $(document).ready(function() {
   $('.main-filter').multifilter({
-    'method' : 'class'
-  })
-})
+    'method': 'class'
+  });
+});
 ```
